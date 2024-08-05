@@ -1,0 +1,159 @@
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 100%;
+  /* width: 100%; */
+  margin: 0 auto;
+  padding: 0 10px;
+}
+
+.logo {
+  font-size: 25px;
+  text-transform: uppercase;
+  font-weight: 500;
+  text-decoration: none;
+  font-family: cursive;
+  background: -webkit-linear-gradient(#eee, #333);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.logo:hover {
+  background: -webkit-linear-gradient(#333, #333);
+  -webkit-background-clip: text;
+  -webkit-transition: background-color 1000ms linear;
+  -ms-transition: background-color 1000ms linear;
+  transition: background-color 1000ms linear;
+}
+
+.nav-items {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.nav-items a {
+  text-decoration: none;
+  font-size: 16px;
+  color: #333;
+  font-family: cursive;
+  font-weight: 500;
+}
+
+.nav-items a:hover {
+  color: #000;
+  text-decoration: none;
+}
+
+.nav-wallet button {
+  padding: 8px 15px;
+  outline: none;
+  border-radius: 6px;
+  border: 1px solid #333;
+  color: #fff;
+  background: #333;
+  cursor: pointer;
+  font-size: 15px;
+  font-family: cursive;
+}
+
+.nav-wallet button:hover {
+  background: #000;
+}
+
+.project {
+  width: 550px;
+  margin: 0 auto;
+  background: #333;
+  padding: 20px;
+  border-radius: 6px;
+}
+
+.projectTask {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #fff;
+}
+
+.projectTask h3 {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  font-size: 25px;
+  font-family: cursive;
+  font-weight: 500;
+}
+
+.progressLine {
+  width: 100%;
+  height: 1px;
+  background: #cdcdcd;
+  margin: 30px 0px;
+}
+
+.progress {
+  display: flex;
+  gap: 20px;
+  flex-direction: row;
+}
+
+.progressItems {
+  background-size: 8px 8px;
+  background-image: linear-gradient(
+    45deg,
+    rgba(255, 255, 255, 0.15) 25%,
+    transparent 25%,
+    transparent 50%,
+    rgba(255, 255, 255, 0.15) 50%,
+    rgba(255, 255, 255, 0.15) 75%,
+    transparent 75%,
+    transparent
+  );
+  background-color: #1a1a1a;
+  height: 176px;
+  width: 100%;
+  border-radius: 5px;
+  box-shadow: 0 1px 5px #000 inset, 0 1px 0 #444;
+  overflow: hidden;
+}
+
+.stripes {
+  display: block;
+  width: 100%;
+  background-color: #ada7c8;
+  border-radius: 5px;
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) inset;
+  position: relative;
+  animation: auto-progress 10s infinite linear;
+  bottom: -86px;
+}
+
+.stripes::after {
+  content: "";
+}
+
+.progressItem1 {
+  height: 51%;
+  background-color: #ada7c8;
+}
+
+.progressItem2 {
+  height: 26%;
+  background-color: #fff;
+  bottom: -130px;
+}
+
+.progressItem3 {
+  height: 55%;
+  background-color: #ff5b36;
+}
+
+.progressItem4 {
+  height: 17%;
+  background-color: #adadad;
+  bottom: -146px;
+}
