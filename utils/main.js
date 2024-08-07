@@ -193,3 +193,28 @@ document.getElementById("btnConnect").addEventListener("click", () => {
     connectWallet();
   }
 });
+
+const getAllTask = async () => {
+  let status = document.getElementById("status");
+  if (showAddress != 0) {
+    const provider = new ethers.providers.Web3Provider(window.ethereum);
+    await provider.send("eth_requestAccounts", []);
+    const signer = provider.getSigner();
+    // Initialize smart contract
+    const contract = new ethers.Contract(contractAddress, contractABI, signer);
+
+    // alert(
+    //   (status.innerHTML =
+    //     "Please wait,getting all the tasks from the smart contract")
+    // );
+    status.innerHTML =
+      "Please wait,getting all the tasks from the smart contract";
+    status.style.color = "#2ecc71";
+    const stask = await contract.getAllStask();
+    console.log(stask);
+  } else {
+    // alert((status.innerHTML = "Please install Metamask"));
+    status.innerHTML = "Please install/connect Metamask";
+    status.style.color = "#c0392b";
+  }
+};

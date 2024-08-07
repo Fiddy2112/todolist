@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../styles/global.css" />
+    <script
+      defer
+      src="https://cdn.ethers.io/lib/ethers-5.2.umd.min.js"
+      type="application/javascript"
+    ></script>
+  </head>
+  <body>
+    <div id="navbar">
+      <div class="nav">
+        <a class="logo" href="">Todo</a>
+        <div class="nav-items">
+          <a href="/pages/addTask.html">Add task</a>
+          <a href="/pages/listTask.html">List tasks</a>
+          <a href="/">Task as finished</a>
+        </div>
+        <div class="nav-wallet">
+          <button id="btnConnect" onclick="connectWallet()">
+            Connect Wallet
+          </button>
+          <p
+            id="walletAddress"
+            onclick="disconnectWallet()"
+            style="display: none"
+          ></p>
+        </div>
+      </div>
+    </div>
+
+    <section>
+      <div class="container" style="flex-direction: column;">
+        <div class="list-task">
+          <div class="taskBtn">
+            <button id="btnListTask" onclick="getAllTask()">
+              Get All Stask
+            </button>
+            <p id="status"></p>
+          </div>
+        </div>
+
+        <ul class="table">
+            <li class="table-header">
+              <div class="col col-1">ID</div>
+              <div class="col col-2">Description</div>
+              <div class="col col-3">Status</div>
+            </li>
+            <li class="table-row">
+              <div class="col col-1" data-label="Id">1</div>
+              <div class="col col-2" data-label="Description">John Doe</div>
+              <div class="col col-3" data-label="Status">Pending</div>
+            </li>
+            <li class="table-row">
+              <div class="col col-1" data-label="Id">2</div>
+              <div class="col col-2" data-label="Description">Jennifer Smith</div>
+              <div class="col col-3" data-label="Status">Pending</div>
+            </li>
+            <li class="table-row">
+              <div class="col col-1" data-label="Id">3</div>
+              <div class="col col-2" data-label="Description">John Smith</div>
+              <div class="col col-3" data-label="Status">Pending</div>
+            </li>
+            <li class="table-row">
+              <div class="col col-1" data-label="Id">4</div>
+              <div class="col col-2" data-label="Description">John Carpenter</div>
+              <div class="col col-3" data-label="Status">Pending</div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <script async src="../utils/main.js"></script>
+  </body>
+</html>

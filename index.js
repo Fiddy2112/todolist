@@ -24,12 +24,13 @@ app.get("/", (req, res) => {
 });
 
 app.post("/addTask", async (req, res) => {
+  const task = req.body.desc;
+  console.log(task);
   try {
-    const task = req.body.desc;
-    console.log(task);
     console.log(contract);
     console.log("Adding task in blockchain network...");
     const tx = await contract.addTask(task);
+    console.log(tx);
     await tx.wait();
     res.send("The task has been registered in the smart contract");
   } catch (error) {

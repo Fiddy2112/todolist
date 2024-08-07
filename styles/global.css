@@ -1,9 +1,20 @@
 *,
+*:before,
+*:after,
 body,
 html {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
 }
 
 .navbar {
@@ -86,11 +97,13 @@ p#walletAddress {
 }
 
 .container {
-  max-width: 100%;
-  margin: 0 auto;
+  max-width: 1000px;
+  margin-right: auto;
+  margin-left: auto;
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
+  min-height: 100vh;
   margin-top: 30px;
 }
 
@@ -260,4 +273,94 @@ button[type="submit"] {
   cursor: pointer;
   background: #333333;
   color: #fff;
+}
+
+.taskBtn {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#btnListTask {
+  padding: 10px 15px;
+  border: none;
+  background: #333333;
+  color: white;
+  font-family: cursive;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  outline: none;
+  cursor: pointer;
+}
+
+p#status {
+  font-size: 20px;
+  margin: 10px 0px;
+  font-family: cursive;
+  font-weight: 600;
+}
+
+.table {
+  width: 700px;
+  font-family: cursive;
+  font-weight: 500;
+}
+
+.table li {
+  border-radius: 3px;
+  padding: 25px 30px;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 25px;
+}
+
+.table .table-header {
+  background-color: #95a5a6;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  font-weight: 600;
+}
+
+.table .table-row {
+  background-color: #ffffff;
+  box-shadow: 0px 0px 9px 0px rgba(0, 0, 0, 0.1);
+}
+
+.table .col-1 {
+  flex-basis: 10%;
+}
+.table .col-2 {
+  flex-basis: 40%;
+}
+
+.table .col-3 {
+  flex-basis: 25%;
+}
+
+@media all and (max-width: 767px) {
+  .table-header {
+    display: none;
+  }
+  .table-header .table-row {
+  }
+  .table-header li {
+    display: block;
+  }
+  .table-header .col {
+    flex-basis: 100%;
+  }
+  .table-header .col {
+    display: flex;
+    padding: 10px 0;
+  }
+  .table-header .col:before {
+    color: #6c7a89;
+    padding-right: 10px;
+    content: attr(data-label);
+    flex-basis: 50%;
+    text-align: right;
+  }
 }
