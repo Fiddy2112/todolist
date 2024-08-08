@@ -1,5 +1,5 @@
-const contractAddress = "0x1b195b9cb68aa207fd15c98cb7a2330c935abfd4";
-const contractABI = [
+let contractAddress = "0x1B195b9CB68aa207fD15C98cB7A2330C935abfd4";
+let contractABI = [
   {
     inputs: [],
     stateMutability: "nonpayable",
@@ -212,6 +212,20 @@ const getAllTask = async () => {
     status.style.color = "#2ecc71";
     const stask = await contract.getAllStask();
     console.log(stask);
+
+    // get stask
+    var table = document.getElementById("table");
+    console.log(table);
+    for (let i = 0; i < stask.length; i++) {
+      const status = stask[i].status == 0 ? "Pending" : "Accepted";
+      table.innerHTML = `
+      <li class="table-row" id="tableRow">
+        <div class="col col-1" data-label="Id">${i}</div>
+        <div class="col col-2" data-label="Description">${stask[i].desc}</div>
+        <div class="col col-3" data-label="Status">${status}</div>
+      </li>
+      `;
+    }
   } else {
     // alert((status.innerHTML = "Please install Metamask"));
     status.innerHTML = "Please install/connect Metamask";
